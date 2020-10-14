@@ -11,6 +11,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.cloud.context.scope.refresh.RefreshScope;
 import org.springframework.context.ConfigurableApplicationContext;
+import org.springframework.context.annotation.Bean;
 import org.springframework.core.env.ConfigurableEnvironment;
 
 @SpringBootApplication
@@ -25,13 +26,14 @@ public class DemoApplication {
 
     public static void main(String[] args) {
 
-        SpringApplication springApplication = new SpringApplication();
-        ConfigurableApplicationContext context = springApplication.run(DemoApplication.class, args);
+        ConfigurableApplicationContext context = SpringApplication.run(DemoApplication.class, args);
         ConfigurableEnvironment environment = context.getEnvironment();
-        environment.getProperty("x");
         System.out.println(environment.getClass().getName());
 
     }
+
+
+
 
 
     @ApolloConfigChangeListener(interestedKeyPrefixes = {"apollo.data."})
