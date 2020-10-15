@@ -12,7 +12,7 @@ public class MyApplicationContextInitializer implements ApplicationContextInitia
     public void initialize(ConfigurableApplicationContext applicationContext) {
         log.info("MyApplicationContextInitializer initialize");
         HashMap<String, Object> map = new HashMap<>();
-//        map.put("example.data","MyApplicationContextInitializer value");
+        map.put("example.data","MyApplicationContextInitializer value");
         applicationContext.getEnvironment().getPropertySources()
                 .addFirst(new MyPropertySource("MyApplicationContextInitializer", map));
     }

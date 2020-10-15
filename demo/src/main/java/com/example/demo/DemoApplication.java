@@ -26,7 +26,9 @@ public class DemoApplication {
 
     public static void main(String[] args) {
 
-        ConfigurableApplicationContext context = SpringApplication.run(DemoApplication.class, args);
+        SpringApplication springApplication = new SpringApplication(DemoApplication.class);
+        springApplication.setAdditionalProfiles("dev");
+        ConfigurableApplicationContext context = springApplication.run(args);
         ConfigurableEnvironment environment = context.getEnvironment();
         System.out.println(environment.getClass().getName());
 
