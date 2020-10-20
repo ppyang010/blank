@@ -1,2 +1,9 @@
 org.springframework.context.ApplicationContextInitializer=com.example.demo.config.MyApplicationContextInitializer
 org.springframework.boot.env.EnvironmentPostProcessor=com.example.demo.config.MyEnvironmentPostProcessor
+org.springframework.context.ApplicationListener=\
+com.example.demo.listener.ApplicationEnvironmentPreparedEventListener,\
+com.example.demo.listener.ApplicationFailedEventListener,\
+com.example.demo.listener.ApplicationPreparedEventListener,\
+com.example.demo.listener.ApplicationReadyEventListener,\
+com.example.demo.listener.ApplicationStartedEventListener,\
+com.example.demo.listener.ApplicationStartingEventListener

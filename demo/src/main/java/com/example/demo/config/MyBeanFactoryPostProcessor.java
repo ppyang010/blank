@@ -22,8 +22,9 @@ public class MyBeanFactoryPostProcessor implements BeanFactoryPostProcessor, Env
 
     @Override
     public void postProcessBeanFactory(ConfigurableListableBeanFactory beanFactory) throws BeansException {
+        log.info("MyBeanFactoryPostProcessor");
         //将commandLine数据源移动到最前面
-        ensureCommandLinePropertyPrecedence(environment);
+//        ensureCommandLinePropertyPrecedence(environment);
     }
 
     private void ensureCommandLinePropertyPrecedence(ConfigurableEnvironment environment) {
