@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class TestApolloController {
 
-    @Value("${apollo.data.param1}")
+    @Value("${apollo.data.param1:}")
     private String param1;
     @Autowired
     private ApolloTestBean apolloTestBean;
